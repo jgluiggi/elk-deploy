@@ -1,0 +1,16 @@
+apiVersion: beat.k8s.elastic.co/v1beta1
+kind: Beat
+metadata:
+  name: quickstart
+spec:
+  type: filebeat
+  version: 8.15.2
+  deployment:
+    podTemplate:
+      spec:
+        containers:
+        - name: filebeat
+          resources:
+            limits:
+              memory: 150Mi
+              cpu: 0.2
